@@ -1267,10 +1267,15 @@ class MockAnkiBridge:
             print(f"[DEBUG] Updating user_cards in database", file=sys.stderr)
             self.db.execute("""
                 UPDATE user_cards 
-                SET fsrs_card_state = ?, last_review = ?, due = ?, updated_at = ?
+                SET fsrs_card_state = ?, last_review = ?, due = ?, updated_at = ?,
+                    stability = ?, difficulty = ?, state = ?, reps = ?, lapses = ?,
+                    elapsed_days = ?, scheduled_days = ?
                 WHERE user_id = ? AND card_id = ?
             """, (
                 json.dumps(card.to_dict()), now_ts, due_ts, now_ts,
+                getattr(card, 'stability', 0), getattr(card, 'difficulty', 2.5), str(getattr(card, 'state', 'New')),
+                getattr(card, 'reps', 0), getattr(card, 'lapses', 0),
+                getattr(card, 'elapsed_days', 0), getattr(card, 'scheduled_days', 0),
                 user_id, card_id
             ))
 

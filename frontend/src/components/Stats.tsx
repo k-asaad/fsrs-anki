@@ -114,6 +114,7 @@ const Stats: React.FC = () => {
     try {
       setLoading(true);
       const data = await ankiApi.getDetailedUserStats('default_user');
+      console.log('[DEBUG] Stats fetched from backend:', data);
       setStats(data);
       setLastUpdated(new Date());
     } catch (error) {
@@ -193,6 +194,7 @@ const Stats: React.FC = () => {
     
     try {
       const result = await ankiApi.answerCardWithFSRS('default_user', selectedCard.card_id, rating);
+      console.log('[DEBUG] Review API response:', result);
       if (result.success) {
         setReviewResult(result);
         setReviewCount(prev => prev + 1);
@@ -632,17 +634,22 @@ const Stats: React.FC = () => {
                       </TableCell>
                       <TableCell>
                         <Box>
-                          <Typography variant="body2">
-                            {card.next_review.days_until > 0 
-                              ? `In ${card.next_review.days_until} days`
-                              : card.next_review.days_until === 0 
-                                ? 'Today'
-                                : 'Overdue'
-                            }
-                          </Typography>
-                          <Typography variant="caption" color="text.secondary">
-                            {formatDate(card.next_review.date)}
-                          </Typography>
+                          {card.next_review ? (
+                            <>
+                              <Typography variant="body2">
+                                {card.next_review.days_until > 0
+                                  ? `In ${card.next_review.days_until} days`
+                                  : card.next_review.days_until === 0
+                                    ? 'Today'
+                                    : 'Overdue'}
+                              </Typography>
+                              <Typography variant="caption" color="text.secondary">
+                                {formatDate(card.next_review.date)}
+                              </Typography>
+                            </>
+                          ) : (
+                            (() => { console.warn('Card missing next_review:', card); return <Typography variant="body2" color="text.secondary">N/A</Typography>; })()
+                          )}
                         </Box>
                       </TableCell>
                       <TableCell>
@@ -771,7 +778,11 @@ const Stats: React.FC = () => {
                       </TableCell>
                       <TableCell>
                         <Typography variant="body2" color="warning.main" fontWeight="bold">
-                          {card.next_review.days_until === 0 ? 'Today' : `${card.next_review.days_until} days`}
+                          {card.next_review
+                            ? (card.next_review.days_until === 0
+                                ? 'Today'
+                                : `${card.next_review.days_until} days`)
+                            : 'N/A'}
                         </Typography>
                       </TableCell>
                       <TableCell>
@@ -1014,12 +1025,13 @@ const Stats: React.FC = () => {
                   </Grid>
                   <Grid item xs={6}>
                     <Typography variant="body2">
-                      <strong>Next Review:</strong> {selectedCard.next_review.days_until > 0 
-                        ? `In ${selectedCard.next_review.days_until} days`
-                        : selectedCard.next_review.days_until === 0 
-                          ? 'Today'
-                          : 'Overdue'
-                      }
+                      <strong>Next Review:</strong> {selectedCard.next_review
+                        ? (selectedCard.next_review.days_until > 0
+                            ? `In ${selectedCard.next_review.days_until} days`
+                            : selectedCard.next_review.days_until === 0
+                              ? 'Today'
+                              : 'Overdue')
+                        : 'N/A'}
                     </Typography>
                   </Grid>
                 </Grid>
@@ -1072,10 +1084,11 @@ const Stats: React.FC = () => {
                       New State: {reviewResult.card.state} (was {selectedCard.state})
                     </Typography>
                     <Typography variant="body2">
-                      Next Review: {reviewResult.next_review.days_until > 0 
-                        ? `In ${reviewResult.next_review.days_until} days`
-                        : 'Today'
-                      }
+                      Next Review: {reviewResult && reviewResult.next_review
+                        ? (reviewResult.next_review.days_until > 0
+                            ? `In ${reviewResult.next_review.days_until} days`
+                            : 'Today')
+                        : 'N/A'}
                     </Typography>
                   </Alert>
                 </Box>
