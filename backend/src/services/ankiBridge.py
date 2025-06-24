@@ -1263,8 +1263,29 @@ class MockAnkiBridge:
 
             print(f"[DEBUG] Card after review: stability={card.stability}, difficulty={card.difficulty}, state={card.state}", file=sys.stderr)
 
-            # 💾 Update user_cards with updated card state
-            print(f"[DEBUG] Updating user_cards in database", file=sys.stderr)
+            # Map FSRS state number to string label
+            state_map = {
+                0: "New",
+                1: "Learning",
+                2: "Review",
+                3: "Relearning"
+            }
+            state_val = getattr(card, 'state', 0)
+            state_label = state_map.get(state_val, str(state_val))
+
+            # Increment reps and lapses
+            current_reps = getattr(card, 'reps', 0) + 1
+            current_lapses = getattr(card, 'lapses', 0)
+            if rating == 1:  # 'Again'
+                current_lapses += 1
+
+            # Extract elapsed_days and scheduled_days from review_log
+            elapsed_days = 0
+            scheduled_days = 0
+            if review_log:
+                elapsed_days = getattr(review_log, 'elapsed_days', 0)
+                scheduled_days = getattr(review_log, 'scheduled_days', 0)
+
             self.db.execute("""
                 UPDATE user_cards 
                 SET fsrs_card_state = ?, last_review = ?, due = ?, updated_at = ?,
@@ -1273,9 +1294,9 @@ class MockAnkiBridge:
                 WHERE user_id = ? AND card_id = ?
             """, (
                 json.dumps(card.to_dict()), now_ts, due_ts, now_ts,
-                getattr(card, 'stability', 0), getattr(card, 'difficulty', 2.5), str(getattr(card, 'state', 'New')),
-                getattr(card, 'reps', 0), getattr(card, 'lapses', 0),
-                getattr(card, 'elapsed_days', 0), getattr(card, 'scheduled_days', 0),
+                getattr(card, 'stability', 0), getattr(card, 'difficulty', 2.5), state_label,
+                current_reps, current_lapses,
+                elapsed_days, scheduled_days,
                 user_id, card_id
             ))
 
