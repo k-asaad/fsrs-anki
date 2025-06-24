@@ -1,0 +1,105 @@
+{
+  "decks": [
+    { "id": 1, "name": "Mathematics", "parent_id": null },
+    { "id": 2, "name": "Physics", "parent_id": null },
+    { "id": 3, "name": "Chemistry", "parent_id": null },
+    { "id": 4, "name": "Biology", "parent_id": null },
+    { "id": 5, "name": "Computer Science", "parent_id": null },
+    { "id": 6, "name": "History", "parent_id": null },
+    { "id": 7, "name": "Geography", "parent_id": null },
+    { "id": 8, "name": "English Grammar", "parent_id": null },
+    { "id": 9, "name": "Spanish Language", "parent_id": null },
+    { "id": 10, "name": "French Language", "parent_id": null },
+    { "id": 11, "name": "Programming Basics", "parent_id": null },
+    { "id": 12, "name": "JavaScript", "parent_id": 11 },
+    { "id": 13, "name": "Python", "parent_id": 11 },
+    { "id": 14, "name": "Data Structures", "parent_id": 5 },
+    { "id": 15, "name": "Algorithms", "parent_id": 5 },
+    { "id": 16, "name": "Art", "parent_id": null },
+    { "id": 17, "name": "Music Theory", "parent_id": null },
+    { "id": 18, "name": "Economics", "parent_id": null },
+    { "id": 19, "name": "Philosophy", "parent_id": null },
+    { "id": 20, "name": "Sports Science", "parent_id": null }
+  ],
+  "notes": [
+    { "deck_id": 1, "front": "What is a prime number?", "back": "A number greater than 1 with no positive divisors other than 1 and itself.", "tags": ["math", "number-theory"] },
+    { "deck_id": 1, "front": "State the Pythagorean theorem.", "back": "a² + b² = c² in a right triangle.", "tags": ["math", "geometry"] },
+    { "deck_id": 1, "front": "What is calculus?", "back": "A branch of mathematics dealing with change and motion.", "tags": ["math", "calculus"] },
+
+    { "deck_id": 2, "front": "What is Newton's First Law?", "back": "An object remains at rest or in uniform motion unless acted upon by a force.", "tags": ["physics", "laws"] },
+    { "deck_id": 2, "front": "Define acceleration.", "back": "The rate of change of velocity per unit time.", "tags": ["physics", "motion"] },
+    { "deck_id": 2, "front": "What is gravity?", "back": "A force that attracts two bodies toward each other.", "tags": ["physics", "forces"] },
+
+    { "deck_id": 3, "front": "What is an atom?", "back": "The smallest unit of matter retaining the properties of an element.", "tags": ["chemistry", "basics"] },
+    { "deck_id": 3, "front": "What is a covalent bond?", "back": "A chemical bond formed by sharing electron pairs.", "tags": ["chemistry", "bonds"] },
+    { "deck_id": 3, "front": "What is pH?", "back": "A measure of acidity or alkalinity of a solution.", "tags": ["chemistry", "acids-bases"] },
+
+    { "deck_id": 4, "front": "What is photosynthesis?", "back": "The process by which green plants make food using sunlight.", "tags": ["biology", "plants"] },
+    { "deck_id": 4, "front": "What is DNA?", "back": "Deoxyribonucleic acid, the carrier of genetic information.", "tags": ["biology", "genetics"] },
+    { "deck_id": 4, "front": "What is a cell?", "back": "The basic structural and functional unit of living organisms.", "tags": ["biology", "cells"] },
+
+    { "deck_id": 5, "front": "What is an algorithm?", "back": "A step-by-step procedure for solving a problem.", "tags": ["cs", "algorithms"] },
+    { "deck_id": 5, "front": "What is a data structure?", "back": "A way of organizing and storing data.", "tags": ["cs", "data-structures"] },
+    { "deck_id": 5, "front": "What is a compiler?", "back": "A program that translates source code into executable code.", "tags": ["cs", "compilers"] },
+
+    { "deck_id": 6, "front": "Who was the first President of the USA?", "back": "George Washington.", "tags": ["history", "usa"] },
+    { "deck_id": 6, "front": "What year did World War II end?", "back": "1945.", "tags": ["history", "ww2"] },
+    { "deck_id": 6, "front": "What was the Renaissance?", "back": "A period of cultural rebirth in Europe from the 14th to 17th century.", "tags": ["history", "renaissance"] },
+
+    { "deck_id": 7, "front": "What is the capital of France?", "back": "Paris.", "tags": ["geography", "capitals"] },
+    { "deck_id": 7, "front": "Which continent is Brazil in?", "back": "South America.", "tags": ["geography", "continents"] },
+    { "deck_id": 7, "front": "What is the largest ocean?", "back": "The Pacific Ocean.", "tags": ["geography", "oceans"] },
+
+    { "deck_id": 8, "front": "What is a noun?", "back": "A word that names a person, place, thing, or idea.", "tags": ["english", "grammar"] },
+    { "deck_id": 8, "front": "What is a verb?", "back": "A word that expresses action or state of being.", "tags": ["english", "grammar"] },
+    { "deck_id": 8, "front": "What is an adjective?", "back": "A word that describes a noun.", "tags": ["english", "grammar"] },
+
+    { "deck_id": 9, "front": "How do you say 'hello' in Spanish?", "back": "Hola.", "tags": ["spanish", "greetings"] },
+    { "deck_id": 9, "front": "How do you say 'thank you' in Spanish?", "back": "Gracias.", "tags": ["spanish", "courtesy"] },
+    { "deck_id": 9, "front": "How do you say 'goodbye' in Spanish?", "back": "Adiós.", "tags": ["spanish", "farewell"] },
+
+    { "deck_id": 10, "front": "How do you say 'hello' in French?", "back": "Bonjour.", "tags": ["french", "greetings"] },
+    { "deck_id": 10, "front": "How do you say 'thank you' in French?", "back": "Merci.", "tags": ["french", "courtesy"] },
+    { "deck_id": 10, "front": "How do you say 'goodbye' in French?", "back": "Au revoir.", "tags": ["french", "farewell"] },
+
+    { "deck_id": 11, "front": "What is a variable?", "back": "A container for storing data values.", "tags": ["programming", "basics"] },
+    { "deck_id": 11, "front": "What is a function?", "back": "A block of code that performs a specific task.", "tags": ["programming", "functions"] },
+    { "deck_id": 11, "front": "What is a loop?", "back": "A way to repeat a block of code multiple times.", "tags": ["programming", "loops"] },
+
+    { "deck_id": 12, "front": "What is JavaScript?", "back": "A programming language for web development.", "tags": ["javascript", "web"] },
+    { "deck_id": 12, "front": "What is a callback?", "back": "A function passed as an argument to another function.", "tags": ["javascript", "functions"] },
+    { "deck_id": 12, "front": "What is the DOM?", "back": "Document Object Model, a programming interface for HTML documents.", "tags": ["javascript", "dom"] },
+
+    { "deck_id": 13, "front": "What is Python?", "back": "A high-level, interpreted programming language.", "tags": ["python", "programming"] },
+    { "deck_id": 13, "front": "What is a list comprehension?", "back": "A concise way to create lists in Python.", "tags": ["python", "syntax"] },
+    { "deck_id": 13, "front": "What is pip?", "back": "Python's package installer.", "tags": ["python", "tools"] },
+
+    { "deck_id": 14, "front": "What is a stack?", "back": "A data structure that follows LIFO (Last In, First Out).", "tags": ["data-structures", "stack"] },
+    { "deck_id": 14, "front": "What is a queue?", "back": "A data structure that follows FIFO (First In, First Out).", "tags": ["data-structures", "queue"] },
+    { "deck_id": 14, "front": "What is a linked list?", "back": "A linear data structure where elements point to the next.", "tags": ["data-structures", "linked-list"] },
+
+    { "deck_id": 15, "front": "What is binary search?", "back": "An efficient algorithm for finding an item from a sorted list.", "tags": ["algorithms", "search"] },
+    { "deck_id": 15, "front": "What is bubble sort?", "back": "A simple sorting algorithm that repeatedly steps through the list.", "tags": ["algorithms", "sort"] },
+    { "deck_id": 15, "front": "What is Big O notation?", "back": "A way to describe the efficiency of an algorithm.", "tags": ["algorithms", "complexity"] },
+
+    { "deck_id": 16, "front": "What is perspective in art?", "back": "A technique for representing three-dimensional objects on a two-dimensional surface.", "tags": ["art", "technique"] },
+    { "deck_id": 16, "front": "What is a primary color?", "back": "Red, blue, and yellow are primary colors.", "tags": ["art", "color"] },
+    { "deck_id": 16, "front": "What is a sculpture?", "back": "A three-dimensional work of art.", "tags": ["art", "sculpture"] },
+
+    { "deck_id": 17, "front": "What is a scale in music?", "back": "A series of notes ordered by pitch.", "tags": ["music", "theory"] },
+    { "deck_id": 17, "front": "What is harmony?", "back": "The combination of simultaneously sounded musical notes.", "tags": ["music", "theory"] },
+    { "deck_id": 17, "front": "What is rhythm?", "back": "A strong, regular, repeated pattern of movement or sound.", "tags": ["music", "theory"] },
+
+    { "deck_id": 18, "front": "What is supply and demand?", "back": "The relationship between the amount of a commodity and the desire for that commodity.", "tags": ["economics", "basics"] },
+    { "deck_id": 18, "front": "What is GDP?", "back": "Gross Domestic Product, the total value of goods produced and services provided in a country.", "tags": ["economics", "gdp"] },
+    { "deck_id": 18, "front": "What is inflation?", "back": "A general increase in prices and fall in the purchasing value of money.", "tags": ["economics", "inflation"] },
+
+    { "deck_id": 19, "front": "What is philosophy?", "back": "The study of the fundamental nature of knowledge, reality, and existence.", "tags": ["philosophy", "basics"] },
+    { "deck_id": 19, "front": "Who was Socrates?", "back": "A classical Greek philosopher credited as one of the founders of Western philosophy.", "tags": ["philosophy", "socrates"] },
+    { "deck_id": 19, "front": "What is ethics?", "back": "Moral principles that govern a person's behavior.", "tags": ["philosophy", "ethics"] },
+
+    { "deck_id": 20, "front": "What is aerobic exercise?", "back": "Physical exercise of low to high intensity that depends primarily on the aerobic energy-generating process.", "tags": ["sports", "aerobic"] },
+    { "deck_id": 20, "front": "What is strength training?", "back": "A type of physical exercise specializing in the use of resistance to induce muscular contraction.", "tags": ["sports", "strength"] },
+    { "deck_id": 20, "front": "What is flexibility?", "back": "The quality of bending easily without breaking.", "tags": ["sports", "flexibility"] }
+  ]
+} 

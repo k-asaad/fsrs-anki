@@ -1,0 +1,169 @@
+body {
+  background: #f7f8fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 900px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px 24px 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 32px;
+}
+
+h2 {
+  color: #333;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Deck Hierarchy */
+.App ul > li > strong {
+  font-size: 1.1em;
+  color: #1976d2;
+}
+
+.App button {
+  background: #e3f2fd;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  margin: 4px 0;
+  font-size: 1em;
+  color: #1976d2;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.App button:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* Card List */
+.CardList ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.CardList li {
+  flex: 1 1 200px;
+}
+.CardList button {
+  width: 100%;
+  text-align: left;
+  background: #f1f8e9;
+  color: #388e3c;
+  border: 1px solid #c8e6c9;
+}
+.CardList button:hover {
+  background: #388e3c;
+  color: #fff;
+}
+
+/* Card Details */
+.CardDetails {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f9fbe7;
+  border-radius: 8px;
+  border: 1px solid #e6ee9c;
+}
+.CardDetails p {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+.CardDetails button {
+  margin-right: 10px;
+  margin-top: 10px;
+  background: #fffde7;
+  color: #fbc02d;
+  border: 1px solid #ffe082;
+}
+.CardDetails button:hover {
+  background: #fbc02d;
+  color: #fff;
+}
+
+/* User Switcher */
+.UserSwitcher {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.UserSwitcher h3 {
+  margin: 0 0 12px 0;
+  color: #495057;
+  font-size: 16px;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-item:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.user-item.active {
+  background: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.user-item.active:hover {
+  background: #0056b3;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.user-card-count {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Virtual Time Display */
+.virtual-time {
+  background: #e3f2fd;
+  border: 1px solid #2196f3;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin: 10px 0;
+  text-align: center;
+  color: #1976d2;
+  font-weight: 500;
+  font-size: 14px;
+}
